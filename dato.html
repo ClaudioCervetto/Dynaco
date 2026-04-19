@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang=it>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Insight</title>
+<style>:root{--bg-color:#f8f6f0;--stroke-color:#222222}body,html{margin:0;padding:0;background-color:var(--bg-color);display:flex;justify-content:center;align-items:center;height:100vh}.milestone-container{width:500px;height:500px;position:relative}.has-shadow .milestone-node{filter:drop-shadow(0px 8px 12px rgba(0,0,0,.3))}.has-shadow .node-shape{filter:drop-shadow(inset 0px 2px 4px rgba(255,255,255,.7))}@keyframes cold-blink{0%,100%{opacity:.2;transform:scale(1)}50%{opacity:.8;transform:scale(1.2)}}@keyframes trace-insight{0%{stroke-dasharray:0 120;stroke-dashoffset:0;opacity:0}10%{opacity:1}45%,65%{stroke-dasharray:120 0;stroke-dashoffset:0;opacity:1}90%{opacity:1}100%{stroke-dasharray:0 120;stroke-dashoffset:-120;opacity:0}}@keyframes node-activate{0%,100%{fill:var(--bg-color);transform:scale(1)}40%,60%{fill:var(--stroke-color);transform:scale(1.5)}}@keyframes predict-ripple{0%{transform:scale(.2);opacity:0;stroke-width:2.5}20%{opacity:1}100%{transform:scale(2.5);opacity:0;stroke-width:.5}}.data-1{animation:cold-blink 3s infinite;transform-origin:center;transform-box:fill-box}.data-2{animation:cold-blink 2.5s infinite 1s;transform-origin:center;transform-box:fill-box}.data-3{animation:cold-blink 4s infinite .5s;transform-origin:center;transform-box:fill-box}.data-4{animation:cold-blink 3.5s infinite 2s;transform-origin:center;transform-box:fill-box}.insight-path{animation:trace-insight 4s cubic-bezier(.4,0,.2,1) infinite}.node-act-1{animation:node-activate 4s infinite .5s;transform-origin:center;transform-box:fill-box}.node-act-2{animation:node-activate 4s infinite 1.2s;transform-origin:center;transform-box:fill-box}.radar-1{animation:predict-ripple 3s ease-out infinite;transform-origin:center;transform-box:fill-box}.radar-2{animation:predict-ripple 3s ease-out infinite 1.5s;transform-origin:center;transform-box:fill-box}</style>
+</head>
+<body>
+<div class=milestone-container>
+<svg width=100% height=100% viewBox="-50 -50 100 100" style=overflow:visible>
+<defs>
+<filter id=sketch x=-50% y=-50% width=200% height=200%>
+<feTurbulence type=fractalNoise baseFrequency=0.08 numOctaves=4 result=noise />
+<feDisplacementMap in=SourceGraphic in2=noise scale=2.5 xChannelSelector=R yChannelSelector=G />
+</filter>
+</defs>
+<g id=tappa-8 class=milestone-node filter=url(#sketch)>
+<g stroke=var(--stroke-color) stroke-width=1.5 stroke-linecap=round>
+<circle cx=-25 cy=25 r=1 class=data-1 />
+<line x1=-27 y1=-5 x2=-23 y2=-5 class=data-2 /> <line x1=-25 y1=-7 x2=-25 y2=-3 class=data-2 />
+<circle cx=-5 cy=20 r=1 class=data-3 />
+<circle cx=20 cy=15 r=1.5 fill=none class=data-4 />
+<line x1=23 y1=-5 x2=27 y2=-5 class=data-1 /> <line x1=25 y1=-7 x2=25 y2=-3 class=data-1 />
+<circle cx=-15 cy=-20 r=1 class=data-3 />
+<circle cx=5 cy=-10 r=1.5 fill=none class=data-2 />
+</g>
+<path d="M -25 25 L -10 5 L 0 10 Q 15 -10, 20 -20" fill=none stroke=var(--stroke-color) stroke-width=2.5 stroke-linecap=round stroke-linejoin=round class=insight-path />
+<circle cx=-25 cy=25 r=2.5 fill=var(--bg-color) stroke=var(--stroke-color) stroke-width=1.5 class="node-shape node-act-1"/>
+<circle cx=-10 cy=5 r=2.5 fill=var(--bg-color) stroke=var(--stroke-color) stroke-width=1.5 class="node-shape node-act-1"/>
+<circle cx=0 cy=10 r=2.5 fill=var(--bg-color) stroke=var(--stroke-color) stroke-width=1.5 class="node-shape node-act-2"/>
+<g transform="translate(20, -20)">
+<circle cx=0 cy=0 r=6 fill=none stroke=var(--stroke-color) class=radar-1 />
+<circle cx=0 cy=0 r=6 fill=none stroke=var(--stroke-color) class=radar-2 />
+<circle cx=0 cy=0 r=2.5 fill=var(--stroke-color) class=node-act-2 />
+</g>
+</g>
+</svg>
+</div>
+</body>
+</html>

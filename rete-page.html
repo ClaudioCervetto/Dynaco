@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>The Network - Dynaco</title>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel=stylesheet>
+<script>if(window.location.search.includes("transition=done")){const n=document.createElement("style");n.innerHTML="h1, .content { animation: none !important; opacity: 1 !important; transform: none !important; } #page-transition { display: none !important; }",document.head.appendChild(n),window.history.replaceState({},document.title,window.location.pathname)}</script>
+<style>:root{--bg-color:#f8f6f0;--text-color:#222222}*{cursor:none!important;box-sizing:border-box}@media (hover:none) and (pointer:coarse){#custom-cursor{display:none!important}*{cursor:auto!important}}body,html{margin:0;padding:0;background-color:var(--bg-color);color:var(--text-color);font-family:'Clash Display',sans-serif;overflow-x:hidden;touch-action:pan-y}#custom-cursor{position:fixed;top:0;left:0;width:12px;height:12px;background-color:var(--text-color);border-radius:50%;pointer-events:none;z-index:100000}#page-transition{position:fixed;top:0;left:0;width:100vw;height:100vh;background-color:var(--bg-color);z-index:99999;pointer-events:none;opacity:1;transition:opacity .5s ease}#page-transition.loaded{opacity:0}#page-transition.active{opacity:1;pointer-events:all}#reset-btn{position:fixed;top:30px;left:30px;background-color:var(--bg-color);border:2px solid var(--text-color);color:var(--text-color);padding:10px 15px;font-family:Georgia,serif;font-weight:700;font-size:1.8rem;line-height:1;text-decoration:none;border-radius:10px;z-index:100;transition:all .3s ease}#reset-btn:hover{background-color:var(--text-color);color:var(--bg-color);transform:scale(1.05) rotate(-2deg)}#smooth-wrapper{position:fixed;top:0;left:0;width:100%;will-change:transform}.container{display:flex;flex-direction:column;align-items:center;padding:20vh 20px 25vh 20px}.text-wrapper{max-width:44ch;width:100%;display:flex;flex-direction:column;align-items:flex-start}h1{font-size:4rem;font-weight:700;margin-bottom:40px;margin-top:0;letter-spacing:1px;text-align:left;opacity:0;transform:translateY(20px);animation:fadeUp 1s ease .3s forwards}.content{text-align:left;font-size:1.25rem;line-height:1.6;opacity:.9;opacity:0;transform:translateY(30px);animation:fadeUp 1s ease .6s forwards}.content p{margin-bottom:25px;margin-top:0}@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}@media (max-width:768px){h1{font-size:3rem;margin-bottom:20px}.content{font-size:1.15rem}.container{padding:15vh 20px 10vh 20px}.text-wrapper{max-width:100%}}</style>
+</head>
+<body>
+<div id=custom-cursor></div>
+<div id=page-transition></div>
+<a href=index.html id=reset-btn class=back-link>&#8962;</a>
+<div id=smooth-wrapper>
+<div class=container>
+<div class=text-wrapper>
+<h1>The Network</h1>
+<div class=content>
+<p>A business is only as strong as the connections between its individual parts. After extracting insights and automating localized workflows, the next evolutionary leap is hyper-connectivity. The Network phase dissolves the remaining invisible walls that separate your departments.</p>
+<p>Historically, corporate teams operate in silos—sales is disconnected from supply chain, and marketing operates blind to customer success. We destroy these barriers. We engineer a synchronized digital environment where data flows universally and instantly across the entire organizational chart.</p>
+<p>By weaving APIs, databases, and communication protocols into a singular, cohesive nervous system, we ensure that every node in your company is hyper-aware of the whole. A sudden shift in market demand triggers automatic, intelligent adaptations in procurement, marketing, and finance simultaneously.</p>
+<p>This is the death of fragmentation. The Network transforms your enterprise from a traditional hierarchy of isolated teams into a unified, living digital entity—a true hive mind capable of moving, thinking, and executing as one incredibly powerful organism.</p>
+</div>
+</div>
+</div>
+</div>
+<script>"scrollRestoration"in history&&(history.scrollRestoration="manual"),window.scrollTo(0,0);const cursor=document.getElementById("custom-cursor");window.addEventListener("mousemove",(e=>{cursor.style.transform=`translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`})),window.addEventListener("load",(()=>{document.getElementById("page-transition").classList.add("loaded"),setBodyHeight()})),document.querySelector(".back-link").addEventListener("click",(e=>{e.preventDefault();const t=e.currentTarget.href,r=document.getElementById("page-transition");r.classList.remove("loaded"),r.classList.add("active"),setTimeout((()=>{window.location.href=t}),600)}));const wrapper=document.getElementById("smooth-wrapper");let targetScroll=0,currentScroll=0;const ease=.04;function setBodyHeight(){document.body.style.height=`${wrapper.getBoundingClientRect().height}px`}function renderSmoothScroll(){currentScroll+=.04*(targetScroll-currentScroll),Math.abs(targetScroll-currentScroll)<.1&&(currentScroll=targetScroll),wrapper.style.transform=`translateY(${-currentScroll}px)`,requestAnimationFrame(renderSmoothScroll)}window.addEventListener("resize",setBodyHeight),setTimeout(setBodyHeight,500),window.addEventListener("scroll",(()=>{targetScroll=window.scrollY})),renderSmoothScroll()</script>
+<audio id=bg-music src=sound.mp3 loop></audio>
+<script>const music=document.getElementById("bg-music");music.volume=.5;let savedTime=sessionStorage.getItem("dynacoMusicTime");savedTime&&(music.currentTime=parseFloat(savedTime)),music.play().catch((()=>{})),setInterval((()=>{music.paused||sessionStorage.setItem("dynacoMusicTime",music.currentTime)}),500)</script>
+</body>
+</html>

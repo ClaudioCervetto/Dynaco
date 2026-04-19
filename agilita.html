@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang=it>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Agility</title>
+<style>:root{--bg-color:#f8f6f0;--stroke-color:#222222}body,html{margin:0;padding:0;background-color:var(--bg-color);display:flex;justify-content:center;align-items:center;height:100vh}.milestone-container{width:500px;height:500px;position:relative}.has-shadow .milestone-node{filter:drop-shadow(0px 8px 12px rgba(0,0,0,.3))}.has-shadow .node-shape{filter:drop-shadow(inset 0px 2px 4px rgba(255,255,255,.7))}@keyframes axis-tilt{0%,100%{transform:rotate(0)}25%{transform:rotate(8deg)}75%{transform:rotate(-8deg)}}@keyframes agile-swing-1{0%,100%{transform:rotate(0)}15%{transform:rotate(45deg)}25%{transform:rotate(35deg)}40%{transform:rotate(40deg)}60%{transform:rotate(-30deg)}70%{transform:rotate(-20deg)}85%{transform:rotate(-25deg)}}@keyframes agile-swing-2{0%,100%{transform:rotate(0)}20%{transform:rotate(-35deg)}30%{transform:rotate(-25deg)}45%{transform:rotate(-30deg)}65%{transform:rotate(50deg)}75%{transform:rotate(40deg)}90%{transform:rotate(45deg)}}@keyframes agile-swing-3{0%,100%{transform:rotate(0)}10%{transform:rotate(20deg)}20%{transform:rotate(10deg)}35%{transform:rotate(15deg)}55%{transform:rotate(-40deg)}65%{transform:rotate(-30deg)}80%{transform:rotate(-35deg)}}@keyframes decision-flash{0%,100%{fill:var(--bg-color);transform:scale(1)}15%,60%{fill:var(--stroke-color);transform:scale(1.3)}}.agile-axis{animation:axis-tilt 4s ease-in-out infinite;transform-origin:center}.arm-1{animation:agile-swing-1 3.5s cubic-bezier(.175,.885,.32,1.275) infinite;transform-origin:-15px 0px}.arm-2{animation:agile-swing-2 3.5s cubic-bezier(.175,.885,.32,1.275) infinite .2s;transform-origin:0px 0px}.arm-3{animation:agile-swing-3 3.5s cubic-bezier(.175,.885,.32,1.275) infinite .4s;transform-origin:15px 0px}.node-flash-1{animation:decision-flash 3.5s infinite;transform-origin:center;transform-box:fill-box}.node-flash-2{animation:decision-flash 3.5s infinite .2s;transform-origin:center;transform-box:fill-box}.node-flash-3{animation:decision-flash 3.5s infinite .4s;transform-origin:center;transform-box:fill-box}</style>
+</head>
+<body>
+<div class=milestone-container>
+<svg width=100% height=100% viewBox="-50 -50 100 100" style=overflow:visible>
+<defs>
+<filter id=sketch x=-50% y=-50% width=200% height=200%>
+<feTurbulence type=fractalNoise baseFrequency=0.08 numOctaves=4 result=noise />
+<feDisplacementMap in=SourceGraphic in2=noise scale=2.5 xChannelSelector=R yChannelSelector=G />
+</filter>
+</defs>
+<g id=tappa-6 class=milestone-node filter=url(#sketch)>
+<g class=agile-axis>
+<line x1=-25 y1=0 x2=25 y2=0 stroke=var(--stroke-color) stroke-width=2 stroke-linecap=round />
+<circle cx=-25 cy=0 r=1.5 fill=var(--stroke-color) />
+<circle cx=25 cy=0 r=1.5 fill=var(--stroke-color) />
+<g class=arm-1>
+<circle cx=-15 cy=0 r=2 fill=var(--bg-color) stroke=var(--stroke-color) stroke-width=1.5 />
+<line x1=-15 y1=2 x2=-15 y2=18 stroke=var(--stroke-color) stroke-width=2 stroke-linecap=round />
+<circle cx=-15 cy=20 r=2.5 fill=var(--bg-color) stroke=var(--stroke-color) stroke-width=1.5 class=node-flash-1 />
+</g>
+<g class=arm-2>
+<circle cx=0 cy=0 r=2 fill=var(--bg-color) stroke=var(--stroke-color) stroke-width=1.5 />
+<line x1=0 y1=-2 x2=0 y2=-22 stroke=var(--stroke-color) stroke-width=2 stroke-linecap=round />
+<circle cx=0 cy=-24 r=2.5 fill=var(--bg-color) stroke=var(--stroke-color) stroke-width=1.5 class=node-flash-2 />
+</g>
+<g class=arm-3>
+<circle cx=15 cy=0 r=2 fill=var(--bg-color) stroke=var(--stroke-color) stroke-width=1.5 />
+<line x1=15 y1=2 x2=15 y2=14 stroke=var(--stroke-color) stroke-width=2 stroke-linecap=round />
+<circle cx=15 cy=16 r=2.5 fill=var(--bg-color) stroke=var(--stroke-color) stroke-width=1.5 class=node-flash-3 />
+</g>
+</g>
+</g>
+</svg>
+</div>
+</body>
+</html>

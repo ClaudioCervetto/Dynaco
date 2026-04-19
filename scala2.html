@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang=it>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Aetheris - Tappa 12: La Scala (Moto Rotatorio Sketch)</title>
+<style>:root{--bg-color:#f8f6f0;--stroke-color:#222222}body,html{margin:0;padding:0;background-color:var(--bg-color);display:flex;justify-content:center;align-items:center;height:100vh}.milestone-container{width:500px;height:500px;position:relative;display:flex;justify-content:center;align-items:center}.has-shadow .milestone-node{filter:drop-shadow(0px 10px 15px rgba(0,0,0,.3))}.has-shadow .node-shape{filter:drop-shadow(inset 0px 2px 4px rgba(255,255,255,.7))}@keyframes earth-rotation{0%{transform:scaleX(1)}50%{transform:scaleX(-1)}100%{transform:scaleX(1)}}@keyframes infinite-scale{0%{transform:scale(.01);opacity:0}15%{opacity:1}80%{opacity:1}100%{transform:scale(2);opacity:0}}@keyframes local-pulse{0%,100%{transform:scale(.8)}50%{transform:scale(1.2)}}.globe-layer-1{animation:infinite-scale 8s linear infinite;transform-origin:center;transform-box:fill-box}.globe-layer-2{animation:infinite-scale 8s linear infinite 2.66s;transform-origin:center;transform-box:fill-box}.globe-layer-3{animation:infinite-scale 8s linear infinite 5.33s;transform-origin:center;transform-box:fill-box}.rotating-meridian{animation:earth-rotation 10s ease-in-out infinite;transform-origin:center;transform-box:fill-box}</style>
+</head>
+<body>
+<div class=milestone-container>
+<svg class=has-shadow width=100% height=100% viewBox="-50 -50 100 100" style=overflow:visible>
+<defs>
+<filter id=sketch x=-50% y=-50% width=200% height=200%>
+<feTurbulence type=fractalNoise baseFrequency=0.04 numOctaves=2 result=noise />
+<feDisplacementMap in=SourceGraphic in2=noise scale=2.5 xChannelSelector=R yChannelSelector=G />
+</filter>
+</defs>
+<g id=tappa-12 class=milestone-node filter=url(#sketch)>
+<g transform=rotate(-23.5)>
+<g class=globe-layer-1 fill=none stroke=var(--stroke-color) stroke-width=2>
+<circle cx=0 cy=0 r=24 /> <ellipse cx=0 cy=0 rx=24 ry=8 /> <line x1=0 y1=-24 x2=0 y2=24 /> <ellipse cx=0 cy=0 rx=10 ry=24 class=rotating-meridian /> </g>
+<g class=globe-layer-2 fill=none stroke=var(--stroke-color) stroke-width=2>
+<circle cx=0 cy=0 r=24 />
+<ellipse cx=0 cy=0 rx=24 ry=8 />
+<line x1=0 y1=-24 x2=0 y2=24 />
+<ellipse cx=0 cy=0 rx=10 ry=24 class=rotating-meridian style=animation-delay:-2s />
+</g>
+<g class=globe-layer-3 fill=none stroke=var(--stroke-color) stroke-width=2>
+<circle cx=0 cy=0 r=24 />
+<ellipse cx=0 cy=0 rx=24 ry=8 />
+<line x1=0 y1=-24 x2=0 y2=24 />
+<ellipse cx=0 cy=0 rx=10 ry=24 class=rotating-meridian style=animation-delay:-4s />
+</g>
+</g>
+<g transform=rotate(-23.5)>
+<circle cx=0 cy=0 r=3 fill=var(--stroke-color) class=core-anchor style="animation:local-pulse 4s ease-in-out infinite;transform-origin:center;transform-box:fill-box"/>
+</g>
+</g>
+</svg>
+</div>
+</body>
+</html>

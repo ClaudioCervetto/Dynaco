@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang=it>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Network</title>
+<style>:root{--bg-color:#f8f6f0;--stroke-color:#222222}body,html{margin:0;padding:0;background-color:var(--bg-color);display:flex;justify-content:center;align-items:center;height:100vh}.milestone-container{width:500px;height:500px;position:relative}.has-shadow .milestone-node{filter:drop-shadow(0px 8px 12px rgba(0,0,0,.3))}.has-shadow .node-shape{filter:drop-shadow(inset 0px 2px 4px rgba(255,255,255,.7))}@keyframes trace-network{0%{stroke-dasharray:0 150;stroke-dashoffset:0;opacity:0}20%{opacity:.5}50%{stroke-dasharray:150 0;stroke-dashoffset:0;opacity:.8}80%{opacity:.5}100%{stroke-dasharray:0 150;stroke-dashoffset:-150;opacity:0}}@keyframes sync-signals{0%{stroke-dashoffset:30;opacity:0}20%{opacity:1}80%{opacity:1}100%{stroke-dashoffset:0;opacity:0}}@keyframes node-sync{0%,100%{transform:scale(1);fill:var(--bg-color)}50%{transform:scale(1.4);fill:var(--stroke-color)}}@keyframes hive-breathe{0%,100%{transform:scale(.9) rotate(0)}50%{transform:scale(1.15) rotate(5deg)}}.net-perimeter{animation:trace-network 6s linear infinite}.signal-1{stroke-dasharray:6 30;animation:sync-signals 2s linear infinite}.signal-2{stroke-dasharray:6 30;animation:sync-signals 2s linear infinite .6s}.signal-3{stroke-dasharray:6 30;animation:sync-signals 2s linear infinite 1.2s}.team-1{animation:node-sync 3s infinite;transform-origin:center;transform-box:fill-box}.team-2{animation:node-sync 3s infinite 1s;transform-origin:center;transform-box:fill-box}.team-3{animation:node-sync 3s infinite 2s;transform-origin:center;transform-box:fill-box}.hive-core{animation:hive-breathe 4s ease-in-out infinite;transform-origin:center;transform-box:fill-box}</style>
+</head>
+<body>
+<div class=milestone-container>
+<svg width=100% height=100% viewBox="-50 -50 100 100" style=overflow:visible>
+<defs>
+<filter id=sketch x=-50% y=-50% width=200% height=200%>
+<feTurbulence type=fractalNoise baseFrequency=0.08 numOctaves=4 result=noise />
+<feDisplacementMap in=SourceGraphic in2=noise scale=2.5 xChannelSelector=R yChannelSelector=G />
+</filter>
+</defs>
+<g id=tappa-9 class=milestone-node filter=url(#sketch)>
+<polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" fill=none stroke=var(--stroke-color) stroke-width=1 stroke-dasharray="4 4" class=net-perimeter />
+<g stroke=var(--stroke-color) stroke-width=1 fill=none opacity=0.4>
+<line x1=0 y1=0 x2=0 y2=-26 />
+<line x1=0 y1=0 x2=22.5 y2=-13 />
+<line x1=0 y1=0 x2=22.5 y2=13 />
+<line x1=0 y1=0 x2=0 y2=26 />
+<line x1=0 y1=0 x2=-22.5 y2=13 />
+<line x1=0 y1=0 x2=-22.5 y2=-13 />
+</g>
+<g stroke=var(--stroke-color) stroke-width=2.5 fill=none stroke-linecap=round>
+<line x1=0 y1=0 x2=0 y2=-26 class=signal-1 />
+<line x1=0 y1=0 x2=22.5 y2=-13 class=signal-2 />
+<line x1=0 y1=0 x2=22.5 y2=13 class=signal-3 />
+<line x1=0 y1=0 x2=0 y2=26 class=signal-1 />
+<line x1=0 y1=0 x2=-22.5 y2=13 class=signal-2 />
+<line x1=0 y1=0 x2=-22.5 y2=-13 class=signal-3 />
+</g>
+<circle cx=0 cy=-26 r=3 fill=var(--bg-color) stroke=var(--stroke-color) stroke-width=1.5 class=team-1 />
+<circle cx=22.5 cy=-13 r=3 fill=var(--bg-color) stroke=var(--stroke-color) stroke-width=1.5 class=team-2 />
+<circle cx=22.5 cy=13 r=3 fill=var(--bg-color) stroke=var(--stroke-color) stroke-width=1.5 class=team-3 />
+<circle cx=0 cy=26 r=3 fill=var(--bg-color) stroke=var(--stroke-color) stroke-width=1.5 class=team-1 />
+<circle cx=-22.5 cy=13 r=3 fill=var(--bg-color) stroke=var(--stroke-color) stroke-width=1.5 class=team-2 />
+<circle cx=-22.5 cy=-13 r=3 fill=var(--bg-color) stroke=var(--stroke-color) stroke-width=1.5 class=team-3 />
+<g class=hive-core>
+<polygon points="0,-8 6.9,-4 6.9,4 0,8 -6.9,4 -6.9,-4" fill=var(--bg-color) stroke=var(--stroke-color) stroke-width=2 stroke-linejoin=round class=node-shape />
+<circle cx=0 cy=0 r=2.5 fill=var(--stroke-color) />
+</g>
+</g>
+</svg>
+</div>
+</body>
+</html>

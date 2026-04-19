@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang=it>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Shield</title>
+<style>:root{--bg-color:#f8f6f0;--stroke-color:#222222}body,html{margin:0;padding:0;background-color:var(--bg-color);display:flex;justify-content:center;align-items:center;height:100vh}.milestone-container{width:500px;height:500px;position:relative}.has-shadow .milestone-node{filter:drop-shadow(0px 10px 15px rgba(0,0,0,.25))}.has-shadow .node-shape{filter:drop-shadow(inset 0px 2px 4px rgba(255,255,255,.7))}@keyframes core-safe{0%,100%{transform:scale(.9);opacity:.8}50%{transform:scale(1.1);opacity:1}}@keyframes shield-reinforce{0%{stroke-dasharray:0 120;stroke-dashoffset:0}50%{stroke-dasharray:120 0;stroke-dashoffset:0}100%{stroke-dasharray:0 120;stroke-dashoffset:-120}}@keyframes forcefield-pulse{0%{transform:scale(.8);opacity:0;stroke-width:3}15%{opacity:.5}100%{transform:scale(1.6);opacity:0;stroke-width:.5}}.valore-core{animation:core-safe 4s ease-in-out infinite;transform-origin:center;transform-box:fill-box}.shield-line{animation:shield-reinforce 4s cubic-bezier(.4,0,.2,1) infinite}.shield-line-alt{animation:shield-reinforce 4s cubic-bezier(.4,0,.2,1) infinite 2s}.forcefield{animation:forcefield-pulse 3s ease-out infinite;transform-origin:center;transform-box:fill-box}.forcefield-delayed{animation:forcefield-pulse 3s ease-out infinite 1.5s;transform-origin:center;transform-box:fill-box}</style>
+</head>
+<body>
+<div class=milestone-container>
+<svg width=100% height=100% viewBox="-50 -50 100 100" style=overflow:visible>
+<defs>
+<filter id=sketch x=-50% y=-50% width=200% height=200%>
+<feTurbulence type=fractalNoise baseFrequency=0.08 numOctaves=4 result=noise />
+<feDisplacementMap in=SourceGraphic in2=noise scale=2.5 xChannelSelector=R yChannelSelector=G />
+</filter>
+</defs>
+<g id=tappa-10-clean class=milestone-node filter=url(#sketch)>
+<path d="M 0 -20 L 16 -10 L 16 10 L 0 20 L -16 10 L -16 -10 Z" fill=none stroke=var(--stroke-color) class=forcefield />
+<path d="M 0 -20 L 16 -10 L 16 10 L 0 20 L -16 10 L -16 -10 Z" fill=none stroke=var(--stroke-color) class=forcefield-delayed />
+<path d="M 0 -18 L 14 -10 L 14 8 L 0 20 L -14 8 L -14 -10 Z" fill=var(--bg-color) stroke=var(--stroke-color) stroke-width=3 stroke-linejoin=round class=node-shape />
+<path d="M 0 -18 L 14 -10 L 14 8 L 0 20 L -14 8 L -14 -10 Z" fill=none stroke=var(--stroke-color) stroke-width=3 stroke-linejoin=round class=shield-line />
+<path d="M 0 20 L -14 8 L -14 -10 L 0 -18 L 14 -10 L 14 8 Z" fill=none stroke=var(--stroke-color) stroke-width=3 stroke-linejoin=round class=shield-line-alt />
+<g class=valore-core>
+<path d="M 0 -6 L 6 0 L 0 6 L -6 0 Z" fill=var(--stroke-color) />
+<circle cx=0 cy=0 r=1.5 fill=var(--bg-color) />
+</g>
+</g>
+</svg>
+</div>
+</body>
+</html>

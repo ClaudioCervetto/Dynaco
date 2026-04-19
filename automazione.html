@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang=it>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Automation</title>
+<style>:root{--bg-color:#f8f6f0;--stroke-color:#222222}body,html{margin:0;padding:0;background-color:var(--bg-color);display:flex;justify-content:center;align-items:center;height:100vh}.milestone-container{width:500px;height:500px;position:relative}.has-shadow .milestone-node{filter:drop-shadow(0px 8px 12px rgba(0,0,0,.3))}.has-shadow .node-shape{filter:drop-shadow(inset 0px 2px 4px rgba(255,255,255,.7))}@keyframes machine-smooth{100%{transform:rotate(360deg)}}@keyframes machine-stepped{100%{transform:rotate(-360deg)}}@keyframes mind-pulse{0%,100%{transform:scale(.9)}50%{transform:scale(1.15)}}@keyframes spark-expand{0%{transform:scale(.5);opacity:0}20%{opacity:1}80%{opacity:1}100%{transform:scale(1.8);opacity:0}}.gear-outer{animation:machine-smooth 10s linear infinite;transform-origin:center;transform-box:fill-box}.gear-inner{animation:machine-stepped 6s steps(12,end) infinite;transform-origin:center;transform-box:fill-box}.mind-core{animation:mind-pulse 3s cubic-bezier(.4,0,.2,1) infinite;transform-origin:center;transform-box:fill-box}.spark-1{animation:spark-expand 3s ease-out infinite;transform-origin:center;transform-box:fill-box}.spark-2{animation:spark-expand 3s ease-out infinite 1s;transform-origin:center;transform-box:fill-box}.spark-3{animation:spark-expand 3s ease-out infinite 2s;transform-origin:center;transform-box:fill-box}</style>
+</head>
+<body>
+<div class=milestone-container>
+<svg width=100% height=100% viewBox="-50 -50 100 100" style=overflow:visible>
+<defs>
+<filter id=sketch x=-50% y=-50% width=200% height=200%>
+<feTurbulence type=fractalNoise baseFrequency=0.08 numOctaves=4 result=noise />
+<feDisplacementMap in=SourceGraphic in2=noise scale=2.5 xChannelSelector=R yChannelSelector=G />
+</filter>
+</defs>
+<g id=tappa-7 class=milestone-node filter=url(#sketch)>
+<g class=gear-outer>
+<circle cx=0 cy=0 r=24 fill=none stroke=var(--stroke-color) stroke-width=1.5 stroke-dasharray="10 4 2 4" stroke-linecap=round />
+<path d="M 0 -24 L 0 -27 M 0 24 L 0 27 M -24 0 L -27 0 M 24 0 L 27 0" fill=none stroke=var(--stroke-color) stroke-width=2 stroke-linecap=round />
+</g>
+<g class=gear-inner>
+<polygon points="0,-16 13.8,-8 13.8,8 0,16 -13.8,8 -13.8,-8" fill=none stroke=var(--stroke-color) stroke-width=2 stroke-linejoin=round />
+<circle cx=0 cy=-16 r=1.5 fill=var(--stroke-color) />
+<circle cx=13.8 cy=8 r=1.5 fill=var(--stroke-color) />
+<circle cx=-13.8 cy=8 r=1.5 fill=var(--stroke-color) />
+</g>
+<g stroke=var(--stroke-color) stroke-width=1.5 stroke-linecap=round opacity=0>
+<g class=spark-1>
+<line x1=-6 y1=-6 x2=-12 y2=-12 />
+<line x1=6 y1=6 x2=12 y2=12 />
+</g>
+<g class=spark-2>
+<line x1=6 y1=-6 x2=12 y2=-12 />
+<line x1=-6 y1=6 x2=-12 y2=12 />
+</g>
+<g class=spark-3>
+<line x1=0 y1=-8 x2=0 y2=-14 />
+<line x1=-8 y1=0 x2=-14 y2=0 />
+<line x1=8 y1=0 x2=14 y2=0 />
+</g>
+</g>
+<g class=mind-core>
+<path d="M 0 -7 L 7 0 L 0 7 L -7 0 Z" fill=var(--bg-color) stroke=var(--stroke-color) stroke-width=2.5 stroke-linejoin=round class=node-shape />
+<circle cx=0 cy=0 r=2 fill=var(--stroke-color) />
+</g>
+</g>
+</svg>
+</div>
+</body>
+</html>

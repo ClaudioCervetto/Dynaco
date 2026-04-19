@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang=it>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Aetheris - Tappa 9: La Rete Articolata (Mesh Alveare)</title>
+<style>:root{--bg-color:#f8f6f0;--stroke-color:#222222}body,html{margin:0;padding:0;background-color:var(--bg-color);display:flex;justify-content:center;align-items:center;height:100vh}.milestone-container{width:500px;height:500px;position:relative}.has-shadow .milestone-node{filter:drop-shadow(0px 8px 12px rgba(0,0,0,.3))}.has-shadow .node-shape{filter:drop-shadow(inset 0px 2px 4px rgba(255,255,255,.7))}@keyframes mesh-flow{0%{stroke-dashoffset:40;opacity:0}20%{opacity:1}80%{opacity:1}100%{stroke-dashoffset:0;opacity:0}}@keyframes node-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}@keyframes core-pulse{0%,100%{transform:scale(.95);opacity:.9}50%{transform:scale(1.1);opacity:1}}@keyframes structure-fade{0%,100%{opacity:.2}50%{opacity:.5}}.signal{stroke-dasharray:4 16;animation:mesh-flow 2.5s linear infinite}.signal-slow{stroke-dasharray:2 20;animation:mesh-flow 4s linear infinite reverse}.hub{animation:node-breathe 3s ease-in-out infinite;transform-origin:center;transform-box:fill-box}.core{animation:core-pulse 4s ease-in-out infinite;transform-origin:center;transform-box:fill-box}.bg-mesh{animation:structure-fade 5s ease-in-out infinite}</style>
+</head>
+<body>
+<div class=milestone-container>
+<svg width=100% height=100% viewBox="-50 -50 100 100" style=overflow:visible>
+<defs>
+<filter id=sketch x=-50% y=-50% width=200% height=200%>
+<feTurbulence type=fractalNoise baseFrequency=0.08 numOctaves=4 result=noise />
+<feDisplacementMap in=SourceGraphic in2=noise scale=2.5 xChannelSelector=R yChannelSelector=G />
+</filter>
+</defs>
+<g id=tappa-9-articolata filter=url(#sketch)>
+<g class=bg-mesh stroke=var(--stroke-color) stroke-width=0.5 fill=none>
+<path d="M 0 -25 L 21.6 -12.5 L 21.6 12.5 L 0 25 L -21.6 12.5 L -21.6 -12.5 Z"/>
+<line x1=0 y1=-25 x2=0 y2=-40 />
+<line x1=21.6 y1=-12.5 x2=35 y2=-20 />
+<line x1=21.6 y1=12.5 x2=35 y2=20 />
+<line x1=0 y1=25 x2=0 y2=40 />
+<line x1=-21.6 y1=12.5 x2=-35 y2=20 />
+<line x1=-21.6 y1=-12.5 x2=-35 y2=-20 />
+</g>
+<g stroke=var(--stroke-color) stroke-width=1.5 fill=none stroke-linecap=round>
+<line x1=0 y1=0 x2=0 y2=-25 class=signal />
+<line x1=0 y1=0 x2=21.6 y2=12.5 class=signal style=animation-delay:.5s />
+<line x1=0 y1=0 x2=-21.6 y2=12.5 class=signal style=animation-delay:1s />
+<path d="M 0 -25 L 21.6 -12.5" class=signal-slow />
+<path d="M -21.6 -12.5 L 0 -25" class=signal-slow style=animation-delay:1.5s />
+<line x1=0 y1=25 x2=0 y2=40 class=signal />
+<line x1=21.6 y1=-12.5 x2=35 y2=-20 class=signal style=animation-delay:.8s />
+</g>
+<g fill=var(--bg-color) stroke=var(--stroke-color) stroke-width=1.2>
+<polygon class=hub points="0,-28 2.6,-23.5 -2.6,-23.5" transform="translate(0, -25)"/>
+<polygon class=hub points="0,-3 2.6,1.5 -2.6,1.5" transform="translate(21.6, -12.5)" style=animation-delay:.5s />
+<polygon class=hub points="0,-3 2.6,1.5 -2.6,1.5" transform="translate(21.6, 12.5)" style=animation-delay:1s />
+<polygon class=hub points="0,-3 2.6,1.5 -2.6,1.5" transform="translate(0, 25)" style=animation-delay:1.5s />
+<polygon class=hub points="0,-3 2.6,1.5 -2.6,1.5" transform="translate(-21.6, 12.5)" style=animation-delay:2s />
+<polygon class=hub points="0,-3 2.6,1.5 -2.6,1.5" transform="translate(-21.6, -12.5)" style=animation-delay:2.5s />
+</g>
+<g fill=var(--stroke-color)>
+<circle cx=0 cy=-40 r=1.5 />
+<circle cx=35 cy=-20 r=1.5 />
+<circle cx=35 cy=20 r=1.5 />
+<circle cx=0 cy=40 r=1.5 />
+<circle cx=-35 cy=20 r=1.5 />
+<circle cx=-35 cy=-20 r=1.5 />
+</g>
+<g class=core>
+<polygon points="0,-10 8.6,-5 8.6,5 0,10 -8.6,5 -8.6,-5" fill=var(--bg-color) stroke=var(--stroke-color) stroke-width=2.5 class=node-shape />
+<circle cx=0 cy=0 r=3 fill=var(--stroke-color) />
+</g>
+</g>
+</svg>
+</div>
+</body>
+</html>
